@@ -6,6 +6,7 @@ const cors = require("cors");
 const app = express();
 //middleware
 app.use(cors());
+
 const studentsController = require("./controllers/studentsController.js");
 const namesController = require("./controllers/namesController.js");
 

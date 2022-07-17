@@ -3,14 +3,14 @@ const studentData = require("../studentData.json");
 const studentsController = express.Router();
 
 studentsController.get('/', (req, res) => {
-    res.send(studentData);
+    res.json(studentData);
 })
 
 studentsController.get('/:id', (req, res) => {
     try{
         const { id } = req.params;
 
-        if(!/[0-9]/.test(id)){
+        if(!/[0-9]/.test(id)){ //regex check if its a number using regex
             res.send("Student id must be a number");
             return;
         }
